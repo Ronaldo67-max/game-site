@@ -3,12 +3,25 @@
 <head>
   <title>My Real Game</title>
   <style>
+    <script>
+  let x = 100;
+  let y = 100;
+
+  document.addEventListener("keydown", function(event) {
+    if (event.key === "ArrowRight") x += 10;
+    if (event.key === "ArrowLeft")  x -= 10;
+    if (event.key === "ArrowDown")  y += 10;
+    if (event.key === "ArrowUp")    y -= 10;
+
+    document.getElementById("player").style.left = x + "px";
+    document.getElementById("player").style.top  = y + "px";
+  });
+</script>
+
     body {
       background: #222;
       margin: 0;
       overflow: hidden;
-    }
-
     #player {
       width: 50px;
       height: 50px;
